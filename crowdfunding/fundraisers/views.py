@@ -27,11 +27,10 @@ class FundraiserList(APIView):
         status=status.HTTP_400_BAD_REQUEST
         )
     
-    class FundraiserDetail(APIView):
-
-        permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        IsOwnerOrReadOnly, 
+class FundraiserDetail(APIView):
+    permission_classes = [
+    permissions.IsAuthenticatedOrReadOnly,
+    IsOwnerOrReadOnly, 
     ]
     def get_object(self, pk):
         try:
@@ -62,18 +61,17 @@ class FundraiserList(APIView):
             status=status.HTTP_400_BAD_REQUEST
         ) 
     
-    class PledgeList(APIView):
-
-        permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
+class PledgeList(APIView):
+    permission_classes = [
+    permissions.IsAuthenticatedOrReadOnly,
     ]
-    
+
     def get(self, request):
         pledges = Pledge.objects.all()
         self.check_object_permissions(self.request, pledges)
         serializer = PledgeSerializer(pledges, many=True)
         return Response(serializer.data)
-    
+
     def post(self, request):       
         serializer = PledgeSerializer(data=request.data)
         if serializer.is_valid():
@@ -86,7 +84,7 @@ class FundraiserList(APIView):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST
         )
-    
+
     def put(self, request, pk):
         pledges = self.get_object(pk)
         serializer = PledgeSerializer(
@@ -103,11 +101,10 @@ class FundraiserList(APIView):
             status=status.HTTP_400_BAD_REQUEST
         ) 
     
-    class PledgeDetail(APIView):
-
-        permission_classes = [
-        permissions.IsAuthenticatedOrReadOnly,
-        IsSupporterOrReadOnly, 
+class PledgeDetail(APIView):
+    permission_classes = [
+    permissions.IsAuthenticatedOrReadOnly,
+    IsSupporterOrReadOnly, 
     ]
     def get_object(self, pk):
         try:
@@ -121,7 +118,7 @@ class FundraiserList(APIView):
         pledges = self.get_object(pk)
         serializer = PledgeDetailSerializer(pledges)
         return Response(serializer.data)
-    
+
     def put(self, request, pk):
         pledges = self.get_object(pk)
         serializer = PledgeDetailSerializer(
