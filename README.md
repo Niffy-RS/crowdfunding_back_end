@@ -36,4 +36,5 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 
 ### DB Schema
 
-![]( {{ ./relative/path/to/your/schema/image.png }} )
+ .<img width="2036" height="1274" alt="db_schema" src="https://github.com/user-attachments/assets/f17e5ad7-ac62-400d-aed7-c4d13b856ddd" />
+
