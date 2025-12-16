@@ -60,6 +60,11 @@ class FundraiserDetail(APIView):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST
         ) 
+    def delete(self, request, pk):
+        fundraiser = self.get_object(pk)
+        fundraiser.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+        
     
 class PledgeList(APIView):
     permission_classes = [
