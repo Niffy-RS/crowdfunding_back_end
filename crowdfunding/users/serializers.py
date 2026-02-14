@@ -1,9 +1,10 @@
 from rest_framework import serializers
 from .models import CustomUser
+from crowdfunding.serializers import FundraiserSerializer, PledgeSerializer
 
 class CustomUserSerializer(serializers.ModelSerializer):
     fundraisers = FundraiserSerializer(many=True, read_only=True)
-    pledges = PledgeSerialiser(many=True, read_only=True)
+    pledges = PledgeSerializer(many=True, read_only=True)
     class Meta:
         model = CustomUser
         fields = '__all__'
