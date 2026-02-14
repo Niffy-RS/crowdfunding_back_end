@@ -6,11 +6,11 @@ Jennifer Roberts-Smith
 
 ### Concept/Name
 
-TeamRaiser is a revolutionary website designed to make gift giving in the workplace straight forward for everyone involved. Whether you're a manager organising a baby shower gift or a team member donating, TeamRaiser makes it easy to track contributions and securely support the events important to your teams.
+TeamRazr
 
 ### Intended Audience/User Stories
 
-This website is aimed at corporations with large teams who love to show their support for each other. Maternity or birthday gifts, staff parties and a cheeky team punt on the horsies are just a few examples of the ways businesses can use TeamRaiser.
+This website is aimed at corporations with large teams who love to show their support for each other. Maternity or birthday gifts, staff parties and a cheeky team punt on the horsies are just a few examples of the ways businesses can use TeamRazr.
 
 ### Front End Pages/Functionality
 

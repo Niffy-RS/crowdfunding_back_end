@@ -16,9 +16,15 @@ class CustomUserList(APIView):
     def post(self, request):
         serializer = CustomUserSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            user = serializer.save()
+            token, created = Token.object.get_or_create(user=user)
             return Response(
-                serializer.data,
+                {
+                    'token': token.key,
+                    'user_id': user.id,
+                    'email': user.email,
+                    'username': user.username
+                },
                 status=status.HTTP_201_CREATED
             )
         return Response(
